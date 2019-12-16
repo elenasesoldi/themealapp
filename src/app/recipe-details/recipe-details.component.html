@@ -12,7 +12,7 @@
     
         </div>
         <div id="ingredients">
-            <div>
+            <div style="display: flex;">
                 <img *ngIf="recipe.strMealThumb && recipe.strMealThumb.length > 0" src="{{recipe.strMealThumb}}">
                 <img *ngIf="!recipe.strMealThumb || recipe.strMealThumb.length == 0" src="../../assets/img/default-recipe-big.png">
             </div>        
