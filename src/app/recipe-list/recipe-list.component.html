@@ -1,0 +1,18 @@
+<h1 class="title secondary items-h3">Recipe List</h1>
+<ul class="items">
+    <li *ngFor="let recipe of recipeList" (click)="onSelect(recipe)" id="{{'recipe' + recipe.idMeal}}">
+        <img *ngIf="recipe.strMealThumb && recipe.strMealThumb.length > 0" src="{{recipe.strMealThumb}}">
+        <img *ngIf="!recipe.strMealThumb || recipe.strMealThumb.length == 0" src="../../assets/img/default-recipe-big.png">
+        <div class="det">
+            <div>
+                <h2 class="title">{{recipe.strMeal}}</h2> 
+            </div>
+            <div>
+                <h5><span>Category: </span>{{recipe.strCategory}}</h5>
+                <h5 *ngIf="recipe.strTags"><span>Tags: </span>{{recipe.strTags}}</h5>
+            </div>     
+            
+        </div>
+        
+    </li>
+</ul>

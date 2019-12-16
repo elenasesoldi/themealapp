@@ -1,0 +1,40 @@
+<div id="recipe-details" *ngIf="recipe">
+    <div>
+        <h1 class="secondary title" style="margin-top: 30px">{{recipe.strMeal}}</h1>
+        <div id="details">
+            <div>
+                <h4><span> Area:</span> {{recipe.strArea}}</h4>
+                
+            </div>
+            <div>
+                <h4><span> Category:</span> {{recipe.strCategory}}</h4>            
+            </div>
+    
+        </div>
+        <div id="ingredients">
+            <div>
+                <img *ngIf="recipe.strMealThumb && recipe.strMealThumb.length > 0" src="{{recipe.strMealThumb}}">
+                <img *ngIf="!recipe.strMealThumb || recipe.strMealThumb.length == 0" src="../../assets/img/default-recipe-big.png">
+            </div>        
+            <div class="light">
+                <h4 class="title secondary">Ingredients</h4>
+                <div *ngFor="let i of ingredients" class="ingred">
+                    <div *ngIf="i.strIngredient && i.strMeasure">
+                        <span style="font-weight: bold; margin-right: 5px;"> {{i.strIngredient}}: </span> {{i.strMeasure}}
+                    </div>            
+                </div>
+            </div>
+        </div>
+        <div id="instructions" class="light">
+            <h4 class="title secondary">Instructions</h4>
+            <div style="margin-bottom: 10px">
+                {{recipe.strInstructions}}
+            </div>
+            <div>
+                <span style="font-weight: bold; margin-right: 5px;"> Tags:</span> {{recipe.strTags}}
+            </div>
+            <div>
+                <a style="font-weight: bold; margin-right: 5px;" href={{recipe.strYoutube}}> Youtube</a> 
+            </div>
+    </div>      
+</div>
